@@ -7,13 +7,13 @@
  
 // Pin 13 has an LED connected on most Arduino boards.
 // give it a name:
-int red = 5;
+int red = 10;
 int green = 6;
-int blue = 10;
+int blue = 5;
 
-int R[3] = {0, 255, 255};
+int R[3] = {255, 255, 0};
 int G[3] = {255, 0, 255};
-int B[3] = {255, 255, 0};
+int B[3] = {0, 255, 255};
 int C[3] = {0, 0, 255};
 int M[3] = {0, 255, 0};
 int Y[3] = {255, 0, 0};
