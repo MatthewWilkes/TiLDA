@@ -1,15 +1,16 @@
-/*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
- 
-  This example code is in the public domain.
- */
- 
-// Pin 13 has an LED connected on most Arduino boards.
-// give it a name:
+#include <SPI.h>
+#include <RF24.h>
+#include "nRF24L01.h"
+
+
 int red = 10;
 int green = 6;
 int blue = 5;
+int left=4;
+int right = 7;
+unsigned int rate = 1000;
+
+RF24 radio(9,10);
 
 int R[3] = {255, 255, 0};
 int G[3] = {255, 0, 255};
@@ -25,11 +26,10 @@ void setup() {
   pinMode(red, OUTPUT);     
   pinMode(green, OUTPUT);     
   pinMode(blue, OUTPUT);     
-  pinMode(7, OUTPUT);     
-  digitalWrite(7, HIGH);
-  pinMode(4, OUTPUT);     
-  digitalWrite(4, HIGH);
-
+  pinMode(right, OUTPUT);     
+  digitalWrite(right, HIGH);
+  pinMode(left, OUTPUT);     
+  digitalWrite(left, HIGH);
 }
 
 // the loop routine runs over and over again forever:
@@ -60,7 +60,7 @@ void loop() {
     analogWrite(red, colour[0]);
     analogWrite(green, colour[1]);
     analogWrite(blue, colour[2]);
-    delay(250);
+    delay(rate);
   }
 
 }
